@@ -19,6 +19,7 @@ const reducer = (state = initialState , action) => {
 			return {...state, fetching: true}
 			break;
 		}
+		case "FETCH_USERS_ERROR": {
 			return {...state, fetching: false, error: action.payload}
 			break;	
 		}
