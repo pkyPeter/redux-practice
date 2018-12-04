@@ -48,6 +48,8 @@ const shoppingCart = (state = { cartProducts: [] }, action) => {
 				state, 
 				{	cartProducts: newList }
 			);
+		case actionType.CHECKOUT:
+			return updateObject(state, {cartProducts: []})
 		default:
 			return state;
 	}

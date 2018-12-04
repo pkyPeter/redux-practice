@@ -4,6 +4,7 @@ export const GETALLPRODUCTS = "GETALLPRODUCTS";
 export const ADDTOCART = "ADDTOCART";
 export const ADD = "ADD";
 export const ADDLATER = "ADDLATER";
+export const CHECKOUT = "CHECKOUT";
 
 export const getAllProducts = () => dispatch => {
 	database.getProducts(products => {
@@ -13,6 +14,19 @@ export const getAllProducts = () => dispatch => {
 			payload: products
 		});
 	})
+}
+
+export const checkOut = () => {
+	return {
+		type: CHECKOUT
+	}
+}
+
+export const addToCart = (details) => {
+	return {
+		type: ADDTOCART,
+		details: details
+	}
 }
 
 // action creator，也可以傳入參數唷
